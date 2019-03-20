@@ -1,0 +1,148 @@
+<h2>Basic Info</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <button class="btn btn-danger" type="logout" (click)="logout()">Logout</button>
+
+        
+
+
+<form name="form" #f="ngForm" (ngSubmit)="submit_details()">
+  
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="model.name" [ngClass]="{ 'is-invalid': f.submitted && !model.name }" required/>
+    <div *ngIf="f.submitted && !model.name" class="invalid-feedback">
+        <!-- <div *ngIf="f.name.errors.required">Name is required</div> -->
+        Name is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>UserName</label>
+    <input type="text" name="username" class="form-control" placeholder="UserName" [(ngModel)]="model.username"  [ngClass]="{ 'is-invalid': f.submitted && !model.username }" required/>
+    <div *ngIf="f.submitted && !model.username" class="invalid-feedback">
+        Username is required
+    </div>
+   </div>
+
+   <div class="form-group">
+    <label>Password</label>
+    <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="model.password"  [ngClass]="{ 'is-invalid': f.submitted && !model.password }" required/>
+    <div *ngIf="f.submitted && !model.password" class="invalid-feedback">
+       Password is required
+    </div>
+  </div>
+
+
+    <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="model.email"  [ngClass]="{ 'is-invalid': f.submitted && !model.email }" required/>
+    <div *ngIf="f.submitted && !model.name" class="invalid-feedback">
+        Email is required
+    </div>
+    </div>
+
+    <div class="form-group">
+    <label>Age</label>
+    <input type="number" name="age" placeholder="Age" class="form-control" [(ngModel)]="model.age"  [ngClass]="{ 'is-invalid': f.submitted && !model.age }" required/>
+    <div *ngIf="f.submitted && !model.age" class="invalid-feedback">
+        Age is required
+    </div>
+    </div>
+
+
+    <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="date" name="date" placeholder="Date of Birth"  class="form-control" [(ngModel)]="model.date"  [ngClass]="{ 'is-invalid': f.submitted && !model.date }" required/>
+        <div *ngIf="f.submitted && !model.date" class="invalid-feedback">
+            DOB is required
+        </div>
+        </div>
+
+    <div class="form-group">
+      <label> File</label>
+      <input type="file" name="files" placeholder="Upload file" (change)="onFileSelected($event)" [(ngModel)]="model.files" [ngClass]="{ 'is-invalid': f.submitted && !model.files }" required/>
+      <div *ngIf="f.submitted && !model.files" class="invalid-feedback">
+          Please upload file
+      </div>
+    </div>
+
+    <div class="form-group">
+    <label>Gender</label><br>
+    <input type="radio" name="gender" [(ngModel)]="model.gender" [ngClass]="{ 'is-invalid': f.submitted && !model.gender }" value="male" > Male
+    <input type="radio" name= "gender" [(ngModel)]="model.gender" [ngClass]="{ 'is-invalid': f.submitted && !model.gender }" value="female"> Female<br><br>
+    <div *ngIf="f.submitted && !model.gender" class="invalid-feedback">
+        Please select your gender
+    </div>
+    </div>
+
+  <div class="form-group">
+    <label>Address</label>
+    <input type="text" name="address" class="form-control" placeholder="Address" [(ngModel)]="model.address" [ngClass]="{ 'is-invalid': f.submitted && !model.address }" required/>
+    <div *ngIf="f.submitted && !model.address" class="invalid-feedback">
+        Address is required
+    </div>
+    </div>
+
+    <div class="form-group">
+    <ul>
+      <li>
+    <label>State</label>
+      <select name="state" class="form-control" [(ngModel)]="model.state" required>
+          <option value="" disabled>Select State</option> 
+          <option value="delhi">Delhi</option>
+          <option value="up">UP</option>
+          <option value="rajasthan">Rajasthan</option>
+          <option value="wb">West Bengal</option>
+       </select>
+       <label>City</label>
+       <select name="city" class="form-control" [(ngModel)]="model.city" required>
+          <option value="" disabled>Select City</option>
+          <option value="new-delhi">New-Delhi</option>
+          <option value="kanpur">Kanpur</option>
+          <option value="jaipur">Jaipur</option>
+          <option value="kolkata">Kolkata</option>
+
+       </select>
+
+      </li>
+      </ul>
+    </div>
+
+
+    <div class="form-group">
+    <label>Pincode</label>
+    <input type="number" name="pincode" class="form-control" placeholder="Pincode" [(ngModel)]="model.pincode" [ngClass]="{ 'is-invalid': f.submitted && !model.pincode }" required/>
+    <div *ngIf="f.submitted && !model.pincode" class="invalid-feedback">
+        Pincode is required
+    </div>
+    </div> 
+
+    <div class="form-group">
+        <label>Skills:</label>
+        <input type="checkbox" name="skills1" [(ngModel)]="model.skills1" class="form-control" value="angular6">Angular 6<br>
+        <input type="checkbox" name="skills2" [(ngModel)]="model.skills2" class="form-control" value="php">PHP<br>
+        <input type="checkbox" name="skills3" [(ngModel)]="model.skills3" class="form-control" value="java">JAVA<br>
+        <input type="checkbox" name="skills4" [(ngModel)]="model.skills4" class="form-control" value="android">Android<br>
+
+    </div>
+
+
+    
+
+    <div class="form-group">
+      <label>Description</label>
+        <textarea rows="4" cols="50" name="description" placeholder="Description" class="form-control" [(ngModel)]="model.description" [ngClass]="{ 'is-invalid': f.submitted && !model.description }" required> 
+            <div *ngIf="f.submitted && !model.pincode" class="invalid-feedback">
+                Description is required
+            </div> 
+        </textarea>
+      </div>
+      
+   
+   
+    <button type="submit">Submit</button>
+    
+
+</form>
+</div></div></div>
